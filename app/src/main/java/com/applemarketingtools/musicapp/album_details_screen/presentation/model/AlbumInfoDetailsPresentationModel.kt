@@ -18,7 +18,7 @@ data class AlbumInfoDetailsPresentationModel(
     val releaseDate: String,
     val url: String,
     val copyright: String,
-    @DrawableRes val iconPreview: Int = 0
+    @DrawableRes val previewImageResId: Int = 0
 
 ) {
     companion object {
@@ -48,7 +48,7 @@ data class AlbumInfoDetailsPresentationModel(
             url = "url",
             contentAdvisoryRating = ".......",
             copyright = "Copyright 2022 Apple inc.All rights reserved.",
-            iconPreview = R.mipmap.ic_album_info_details_preview
+            previewImageResId = R.mipmap.ic_album_info_details_preview
         )
     }
 }

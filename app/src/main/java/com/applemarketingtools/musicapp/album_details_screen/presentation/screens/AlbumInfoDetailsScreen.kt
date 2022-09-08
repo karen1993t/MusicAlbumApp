@@ -60,9 +60,6 @@ fun AlbumInfoDetailsScreen(
     val systemUiController = rememberSystemUiController()
     val multipleEventsCutter = remember { MultipleEventsCutter.get() }
 
-
-
-
     LaunchedEffect(key1 = true) {
         albumDetailsViewModel.loadInitialAlbumInfoData(albumInfoData = albumInfoData)
     }
@@ -77,6 +74,9 @@ fun AlbumInfoDetailsScreen(
 
                     startActivity(context, intent, null)
                 }
+            }
+            is AlbumInfoDetailsSideEffect.NavigateToBackStack -> {
+                navController.popBackStack()
             }
         }
     }
@@ -108,11 +108,15 @@ fun AlbumInfoDetailsScreen(
                             albumDetailsViewModel.onVisitButtonClicked(artisUrl = albumViewState.data.artistUrl)
                         }
                     },
-                    backButtonClicked = { navController.popBackStack() }
+                    backButtonClicked = { albumDetailsViewModel.onBackButtonClicked() }
                 )
             }
-            is UiStatus.Failed -> {return@Box}
-            is UiStatus.Empty -> {return@Box}
+            is UiStatus.Failed -> {
+                return@Box
+            }
+            is UiStatus.Empty -> {
+                return@Box
+            }
         }
     }
 }
@@ -183,7 +187,7 @@ private fun AlbumInfoDetailsScreenSuccess(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(imageHeight),
-                painter = painterResource(id = data.iconPreview),
+                painter = painterResource(id = data.previewImageResId),
                 contentScale = ContentScale.Crop,
                 contentDescription = "IconAlbum",
             )

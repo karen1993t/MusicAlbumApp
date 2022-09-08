@@ -9,4 +9,6 @@ sealed class AlbumInfoDetailsSideEffect {
         val isClicked: Boolean,
         val artistUrl: String
     ) : AlbumInfoDetailsSideEffect()
+
+    object NavigateToBackStack : AlbumInfoDetailsSideEffect()
 }

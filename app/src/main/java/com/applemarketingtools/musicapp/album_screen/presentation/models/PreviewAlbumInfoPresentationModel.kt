@@ -12,7 +12,7 @@ class PreviewAlbumInfoPresentationModel : PreviewParameterProvider<AlbumInfoPres
             artistId = "",
            artistUrl = "",
            artistName = "",
-           artworkUrl100 = "",
+           imageUrl = "",
            copyright = "",
            contentAdvisoryRating = "",
            id = "",

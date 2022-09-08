@@ -1,10 +1,8 @@
 package com.applemarketingtools.musicapp.core.presentation.screens
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -18,9 +16,11 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.airbnb.lottie.compose.*
 import com.applemarketingtools.musicapp.R
+import com.applemarketingtools.musicapp.ui.theme.MusicAppExerciseTheme
 import com.applemarketingtools.musicapp.ui.theme.MusicAppTheme
 
 @Composable
@@ -141,6 +141,42 @@ fun NetworkErrorScreen(
                 color = MusicAppTheme.colors.primaryBackground,
                 maxLines = 1,
             )
+        }
+    }
+}
+
+
+@Preview(
+    name = "NetworkErrorScreenLightPreview",
+    uiMode = Configuration.UI_MODE_NIGHT_NO
+)
+@Composable
+private fun NetworkErrorScreenLightPreview() {
+
+    MusicAppExerciseTheme(darkTheme = false) {
+        NetworkErrorScreen(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MusicAppTheme.colors.primaryBackground)
+        ) {
+            // tryAgainButtonClicked
+        }
+    }
+}
+
+@Preview(
+    name = "NetworkErrorScreenDarkPreview",
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+@Composable
+private fun NetworkErrorScreenDarkPreview() {
+    MusicAppExerciseTheme(darkTheme = true) {
+        NetworkErrorScreen(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MusicAppTheme.colors.primaryBackground)
+        ) {
+            // tryAgainButtonClicked
         }
     }
 }

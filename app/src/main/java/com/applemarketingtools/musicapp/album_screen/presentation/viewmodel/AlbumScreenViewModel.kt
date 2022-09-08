@@ -39,11 +39,8 @@ class AlbumScreenViewModel(
     override val container =
         container<AlbumInfoScreenViewState, AlbumInfoScreenSideEffect>(AlbumInfoScreenViewState.initial())
 
-    init {
-        loadInitialData()
-    }
 
-    private fun loadInitialData() {
+     fun loadInitialData() {
         viewModelScope.launch {
             val result = getAlbumInfoUseCase(COUNT_RESPONSE_DATA).mapResultData {
                 it.map { albumInfoDomainModel ->

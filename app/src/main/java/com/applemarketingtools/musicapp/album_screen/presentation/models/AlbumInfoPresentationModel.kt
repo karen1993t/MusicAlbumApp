@@ -1,9 +1,7 @@
 package com.applemarketingtools.musicapp.album_screen.presentation.models
 
-import android.graphics.drawable.Drawable
+import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Immutable
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
 import com.applemarketingtools.musicapp.R
 
 
@@ -12,7 +10,7 @@ data class AlbumInfoPresentationModel(
     val artistId: String,
     val artistName: String,
     val artistUrl: String,
-    val artworkUrl100: String,
+    val imageUrl: String,
     val contentAdvisoryRating: String,
     val id: String,
     val kind: String,
@@ -20,7 +18,7 @@ data class AlbumInfoPresentationModel(
     val releaseDate: String,
     val url: String,
     val copyright: String,
-    val previewImageResId: Int = R.drawable.ic_launcher_background
+    @DrawableRes val previewImageResId: Int = 0
 
 ) {
     companion object {
@@ -28,7 +26,7 @@ data class AlbumInfoPresentationModel(
             artistId = "",
             artistName = "",
             artistUrl = "",
-            artworkUrl100 = "",
+            imageUrl = "",
             id = "",
             kind = "",
             name = "",
@@ -39,17 +37,18 @@ data class AlbumInfoPresentationModel(
         )
 
         fun preview() = AlbumInfoPresentationModel(
-            artistId = "199992",
-            artistName = "Jenifer Lopes",
-            artistUrl = "http/",
-            artworkUrl100 = "",
+            artistId = "artist_id",
+            artistName = "Bad Bunny",
+            artistUrl = "artist_url",
+            imageUrl = ".......",
             id = "1",
-            kind = "11",
-            name = "Command",
-            releaseDate = "2022-05-09",
-            url = "",
-            contentAdvisoryRating = "",
-            copyright = ""
+            kind = "fsfsf",
+            name = "Un Verano Sin Ti",
+            releaseDate = "Released May 20, 2022",
+            url = "url",
+            contentAdvisoryRating = ".......",
+            copyright = "Copyright 2022 Apple inc.All rights reserved.",
+            previewImageResId = R.mipmap.ic_album_info_details_preview
         )
     }
 }

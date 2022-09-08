@@ -9,7 +9,7 @@ class AlbumInfoDomainToUiMapper : Mapper<AlbumInfoDomainModel, AlbumInfoPresenta
     override fun map(s: AlbumInfoDomainModel): AlbumInfoPresentationModel =
         AlbumInfoPresentationModel(
             artistName = s.artistName.orEmpty(),
-            artworkUrl100 = s.imageUrl.orEmpty(),
+            imageUrl = s.imageUrl.orEmpty(),
             id = s.id.orEmpty(),
             name = s.name.orEmpty(),
             artistId = s.artistId.orEmpty(),

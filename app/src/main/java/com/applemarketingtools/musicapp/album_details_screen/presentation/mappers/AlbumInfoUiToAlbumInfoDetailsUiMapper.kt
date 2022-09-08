@@ -12,7 +12,7 @@ class AlbumInfoUiToAlbumInfoDetailsUiMapper(
     override fun map(s: AlbumInfoPresentationModel): AlbumInfoDetailsPresentationModel =
         AlbumInfoDetailsPresentationModel(
             artistName = s.artistName,
-            imageUrl = s.artworkUrl100,
+            imageUrl = s.imageUrl,
             id = s.id,
             name = s.name,
             artistId = s.artistId,

@@ -91,4 +91,12 @@ class AlbumInfoDetailsViewModel(
             )
         }
     }
+
+    fun onBackButtonClicked() {
+        intent {
+            postSideEffect(
+                AlbumInfoDetailsSideEffect.NavigateToBackStack
+            )
+        }
+    }
 }
