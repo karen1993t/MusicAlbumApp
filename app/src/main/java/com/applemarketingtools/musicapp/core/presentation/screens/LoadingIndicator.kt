@@ -12,15 +12,15 @@ import com.applemarketingtools.musicapp.ui.theme.MusicAppExerciseTheme
 import com.applemarketingtools.musicapp.ui.theme.MusicAppTheme
 
 @Composable
-fun LoadingIndicator(modifier: Modifier = Modifier, progress: Float = 0f) {
+fun LoadingIndicator(modifier: Modifier = Modifier) {
     Box(modifier = modifier) {
+
         CircularProgressIndicator(
             modifier = Modifier
                 .align(
                     Alignment.Center
                 ),
-            color = MusicAppTheme.colors.buttonPrimary,
-            progress = progress
+            color = MusicAppTheme.colors.buttonPrimary
         )
     }
 }
@@ -33,6 +33,16 @@ fun LoadingIndicator(modifier: Modifier = Modifier, progress: Float = 0f) {
 @Composable
 fun LoadingScreenLightPreview() {
     MusicAppExerciseTheme(darkTheme = false) {
-        LoadingIndicator(modifier = Modifier.fillMaxSize(), progress = 0.75f)
+        Box(modifier = Modifier.fillMaxSize()) {
+
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .align(
+                        Alignment.Center
+                    ),
+                color = MusicAppTheme.colors.buttonPrimary,
+                progress = 0.75f
+            )
+        }
     }
 }
